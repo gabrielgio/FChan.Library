@@ -6,8 +6,8 @@ namespace FChan.Library
     /// <summary>
     /// This class is the equivlate of post object from https://github.com/4chan/4chan-API
     /// </summary>
-	public class Post
-	{
+    public class Post
+    {
         /// <summary>
         /// Get or sets the post number.
         /// </summary>
@@ -137,7 +137,6 @@ namespace FChan.Library
         /// <value>The name of the renamed file.</value>
         [JsonProperty("tim")]
         public long RenamedFileName { get; set; }
-
 
         /// <summary>
         /// Gets or sets the unix timestamp.
@@ -324,5 +323,5 @@ namespace FChan.Library
         {
             return JsonConvert.DeserializeObject<Post>(json);
         }
-	}
+    }
 }

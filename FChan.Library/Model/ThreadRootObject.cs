@@ -3,10 +3,9 @@ using Newtonsoft.Json;
 
 namespace FChan.Library
 {
-	public class ThreadRootObject
-	{
+    public class ThreadRootObject
+    {
         [JsonProperty("threads")]
         public List<Thread> Threads { get; set; }
-	}
+    }
 }
-

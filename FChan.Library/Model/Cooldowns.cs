@@ -3,8 +3,8 @@ using Newtonsoft.Json;
 
 namespace FChan.Library
 {
-	public class Cooldowns
-	{
+    public class Cooldowns
+    {
         [JsonProperty("threads")]
         public int Threads { get; set; }
 
@@ -19,6 +19,5 @@ namespace FChan.Library
 
         [JsonProperty("images_intra")]
         public int ImagesIntra { get; set; }
-	}
+    }
 }
-

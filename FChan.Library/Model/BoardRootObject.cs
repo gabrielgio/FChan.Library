@@ -3,10 +3,9 @@ using Newtonsoft.Json;
 
 namespace FChan.Library
 {
-	public class BoardRootObject
-	{
+    public class BoardRootObject
+    {
         [JsonProperty("boards")]
         public List<Board> Boards { get; set; }
-	}
+    }
 }
-

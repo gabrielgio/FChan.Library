@@ -2,8 +2,8 @@
 
 namespace FChan.Library
 {
-	public class Board
-	{
+    public class Board
+    {
         [JsonProperty("board")]
         public string BoardName { get; set; }
 
@@ -57,6 +57,5 @@ namespace FChan.Library
 
         [JsonProperty("math_tags")]
         public int? MathTags { get; set; }
-	}
+    }
 }
-
