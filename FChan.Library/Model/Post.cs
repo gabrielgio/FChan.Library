@@ -16,7 +16,7 @@ namespace FChan.Library
         /// </remarks>
         /// <value>The post number.</value>
         [JsonProperty("no")]
-		public int PostNumber { get; set; }
+        public int PostNumber { get; set; }
 
         /// <summary>
         /// Gets or sets the tag.
@@ -36,7 +36,7 @@ namespace FChan.Library
         /// </remarks>
         /// <value>The date of creation.</value>
         [JsonProperty("now")]
-		public string Date { get; set; }
+        public string Date { get; set; }
 
         /// <summary>
         /// Post name.
@@ -46,7 +46,7 @@ namespace FChan.Library
         /// </remarks>
         /// <value>The post name.</value>
         [JsonProperty("name")]
-		public string Name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Gets or sets the post name.
@@ -56,7 +56,7 @@ namespace FChan.Library
         /// </remarks>
         /// <value>The post name.</value>
         [JsonProperty("sub")]
-		public string Subject { get; set; }
+        public string Subject { get; set; }
 
         /// <summary>
         /// Post name.
@@ -66,7 +66,7 @@ namespace FChan.Library
         /// </remarks>
         /// <value>The post name.</value>
         [JsonProperty("com")]
-		public string Comment { get; set; }
+        public string Comment { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the original file.
@@ -76,7 +76,7 @@ namespace FChan.Library
         /// </remarks>
         /// <value>The name of the original file.</value>
         [JsonProperty("filename")]
-		public string OriginalFileName { get; set; }
+        public string OriginalFileName { get; set; }
 
         /// <summary>
         /// Gets or sets the file extension.
@@ -86,7 +86,7 @@ namespace FChan.Library
         /// </remarks>
         /// <value>The file extension.</value>
         [JsonProperty("ext")]
-		public string FileExtension { get; set; }
+        public string FileExtension { get; set; }
 
         /// <summary>
         /// Gets or sets the width of the image.
@@ -96,7 +96,7 @@ namespace FChan.Library
         /// </remarks>
         /// <value>The width of the image.</value>
         [JsonProperty("w")]
-		public int ImageWidth { get; set; }
+        public int ImageWidth { get; set; }
 
         /// <summary>
         /// Gets or sets the height of the image.
@@ -106,7 +106,7 @@ namespace FChan.Library
         /// </remarks>
         /// <value>The height of the image.</value>
         [JsonProperty("h")]
-		public int ImageHeight { get; set; }
+        public int ImageHeight { get; set; }
 
         /// <summary>
         /// Gets or sets the width of the thumbnail.
@@ -116,7 +116,7 @@ namespace FChan.Library
         /// </remarks>
         /// <value>The width of the thumbnail.</value>
         [JsonProperty("tn_w")]
-		public int ThumbnailWidth { get; set; }
+        public int ThumbnailWidth { get; set; }
 
         /// <summary>
         /// Gets or sets the height of the thumbnail.
@@ -126,7 +126,7 @@ namespace FChan.Library
         /// </remarks>
         /// <value>The height of the thumbnail.</value>
         [JsonProperty("tn_h")]
-		public int ThumbnailHeight { get; set; }
+        public int ThumbnailHeight { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the renamed file.
@@ -136,7 +136,7 @@ namespace FChan.Library
         /// </remarks>
         /// <value>The name of the renamed file.</value>
         [JsonProperty("tim")]
-		public long RenamedFileName { get; set; }
+        public long RenamedFileName { get; set; }
 
 
         /// <summary>
@@ -147,7 +147,7 @@ namespace FChan.Library
         /// </remarks>
         /// <value>The unix timestamp.</value>
         [JsonProperty("time")]
-		public int UnixTimestamp { get; set; }
+        public int UnixTimestamp { get; set; }
 
         /// <summary>
         /// Gets or sets the M d5.
@@ -157,7 +157,7 @@ namespace FChan.Library
         /// </remarks>
         /// <value>The M d5.</value>
         [JsonProperty("md5")]
-		public string MD5 { get; set; }
+        public string MD5 { get; set; }
 
         /// <summary>
         /// Gets or sets the size of the file.
@@ -167,7 +167,7 @@ namespace FChan.Library
         /// </remarks>
         /// <value>The size of the file.</value>
         [JsonProperty("fsize")]
-		public int FileSize { get; set; }
+        public int FileSize { get; set; }
 
         /// <summary>
         /// Gets or sets the reply to.
@@ -177,7 +177,7 @@ namespace FChan.Library
         /// </remarks>
         /// <value>The reply to.</value>
         [JsonProperty("resto")]
-		public int ReplyTo { get; set; }
+        public int ReplyTo { get; set; }
 
         /// <summary>
         /// Gets or sets the file deleted.
@@ -206,7 +206,7 @@ namespace FChan.Library
         /// </remarks>
         /// <value>The bump limit.</value>
         [JsonProperty("bumplimit")]
-		public int BumpLimit { get; set; }
+        public int BumpLimit { get; set; }
 
         /// <summary>
         /// Gets a value indicating whether this <see cref="FChan.Library.Post"/> bump limit met.
@@ -225,7 +225,7 @@ namespace FChan.Library
         /// </remarks>
         /// <value>The image limit.</value>
         [JsonProperty("imagelimit")]
-		public int ImageLimit { get; set; }
+        public int ImageLimit { get; set; }
 
         /// <summary>
         /// Gets a value indicating whether this <see cref="FChan.Library.Post"/> image limit met.
@@ -244,7 +244,7 @@ namespace FChan.Library
         /// </remarks>
         /// <value>The thread URL slug.</value>
         [JsonProperty("semantic_url")]
-		public string ThreadUrlSlug { get; set; }
+        public string ThreadUrlSlug { get; set; }
 
         /// <summary>
         /// Gets or sets the custom spoilers.
@@ -254,7 +254,7 @@ namespace FChan.Library
         /// </remarks>
         /// <value>The custom spoilers.</value>
         [JsonProperty("custom_spoiler")]
-		public int CustomSpoilers { get; set; }
+        public int CustomSpoilers { get; set; }
 
         /// <summary>
         /// Gets or sets the replies.
@@ -264,7 +264,7 @@ namespace FChan.Library
         /// </remarks>
         /// <value>The replies.</value>
         [JsonProperty("replies")]
-		public int Replies { get; set; }
+        public int Replies { get; set; }
 
         /// <summary>
         /// Gets or sets the images.
@@ -274,7 +274,7 @@ namespace FChan.Library
         /// </remarks>
         /// <value>The images.</value>
         [JsonProperty("images")]
-		public int Images { get; set; }
+        public int Images { get; set; }
 
         /// <summary>
         /// Gets or sets the replies omitted.
@@ -284,7 +284,7 @@ namespace FChan.Library
         /// </remarks>
         /// <value>The replies omitted.</value>
         [JsonProperty("omitted_posts")]
-		public int RepliesOmitted { get; set; }
+        public int RepliesOmitted { get; set; }
 
         /// <summary>
         /// Gets or sets the image replies omitted.
@@ -304,7 +304,7 @@ namespace FChan.Library
         /// </remarks>
         /// <value>The trip code.</value>
         [JsonProperty("trip")]
-		public string TripCode { get; set; }
+        public string TripCode { get; set; }
 
         /// <summary>
         /// Convert it to a json string.

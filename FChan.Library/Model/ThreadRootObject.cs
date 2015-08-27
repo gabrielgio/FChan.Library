@@ -6,7 +6,7 @@ namespace FChan.Library
 	public class ThreadRootObject
 	{
         [JsonProperty("threads")]
-		public List<Thread> Threads { get; set; }
+        public List<Thread> Threads { get; set; }
 	}
 }
 

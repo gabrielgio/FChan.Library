@@ -6,19 +6,19 @@ namespace FChan.Library
 	public class Cooldowns
 	{
         [JsonProperty("threads")]
-		public int Threads { get; set; }
+        public int Threads { get; set; }
 
         [JsonProperty("replies")]
-		public int Replies { get; set; }
+        public int Replies { get; set; }
 
         [JsonProperty("images")]
-		public int Images { get; set; }
+        public int Images { get; set; }
 
         [JsonProperty("replies_intra")]
-		public int RepliesIntra { get; set; }
+        public int RepliesIntra { get; set; }
 
         [JsonProperty("images_intra")]
-		public int ImagesIntra { get; set; }
+        public int ImagesIntra { get; set; }
 	}
 }
 

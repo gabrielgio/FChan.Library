@@ -6,7 +6,7 @@ namespace FChan.Library
 	public class Thread
 	{
         [JsonProperty("posts")]
-		public List<Post> Posts { get; set; }
+        public List<Post> Posts { get; set; }
 	}
 }
 
