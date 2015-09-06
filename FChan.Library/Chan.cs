@@ -5,8 +5,11 @@ using Newtonsoft.Json;
 
 namespace FChan.Library
 {
-	public static class Chan
-	{
+    /// <summary>
+    /// Chan.
+    /// </summary>
+    public static class Chan
+    {
         internal static T DownloadObject<T>(string url)
         {
             try
@@ -31,20 +34,35 @@ namespace FChan.Library
             }
         }
 
-		public static BoardRootObject GetBoard()
+        /// <summary>
+        /// Gets boards info.
+        /// </summary>
+        /// <returns>The board.</returns>
+        public static BoardRootObject GetBoard()
         {
             return DownloadObject<BoardRootObject>(Constants.BoardUrl);
         }
 
-		public static ThreadRootObject GetThreadPage(string boad, int page)
+        /// <summary>
+        /// Gets thead root object.
+        /// </summary>
+        /// <returns>The thread page.</returns>
+        /// <param name="board">Board.</param>
+        /// <param name="page">Page.</param>
+        public static ThreadRootObject GetThreadPage(string board, int page)
         {
-            return DownloadObject<ThreadRootObject>(Constants.GetThreadPageUrl(boad, page));
+            return DownloadObject<ThreadRootObject>(Constants.GetThreadPageUrl(board, page));
         }
 
-		public static Thread GetThread(string boad, int threadNumber)
+        /// <summary>
+        /// Gets the thread.
+        /// </summary>
+        /// <returns>The thread.</returns>
+        /// <param name="boad">Boad.</param>
+        /// <param name="threadNumber">Thread number.</param>
+        public static Thread GetThread(string boad, int threadNumber)
         {
             return DownloadObject<Thread>(Constants.GetThreadUrl(boad, threadNumber));
         }
-	}
+    }
 }
-
