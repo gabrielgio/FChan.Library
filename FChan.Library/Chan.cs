@@ -2,6 +2,8 @@
 using System.Net;
 using System.IO;
 using Newtonsoft.Json;
+using System.Threading.Tasks;
+using System.Text;
 
 namespace FChan.Library
 {

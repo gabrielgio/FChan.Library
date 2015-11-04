@@ -12,7 +12,7 @@ namespace FChan.Library
         /// Get or sets the post number.
         /// </summary>
         /// <remarks>
-        /// This property is the equivalent of no.
+        /// This property is the equivalent for no.
         /// </remarks>
         /// <value>The post number.</value>
         [JsonProperty("no")]
@@ -22,7 +22,7 @@ namespace FChan.Library
         /// Gets or sets the tag.
         /// </summary>
         /// <remarks>
-        /// This property is the equivalent of tag.
+        /// This property is the equivalent for tag.
         /// </remarks>
         /// <value>The tag.</value>
         [JsonProperty("tag")]
@@ -32,7 +32,7 @@ namespace FChan.Library
         /// Gets and sets the date of creation.
         /// </summary>
         /// <remarks>
-        /// This property is the equivalent of now.
+        /// This property is the equivalent for now.
         /// </remarks>
         /// <value>The date of creation.</value>
         [JsonProperty("now")]
@@ -42,7 +42,7 @@ namespace FChan.Library
         /// Post name.
         /// </summary>
         /// <remarks>
-        /// This property is the equivalent of name.
+        /// This property is the equivalent for name.
         /// </remarks>
         /// <value>The post name.</value>
         [JsonProperty("name")]
@@ -52,7 +52,7 @@ namespace FChan.Library
         /// Gets or sets the post name.
         /// </summary>
         /// <remarks>
-        /// This property is the equivalent of name.
+        /// This property is the equivalent for name.
         /// </remarks>
         /// <value>The post name.</value>
         [JsonProperty("sub")]
@@ -62,7 +62,7 @@ namespace FChan.Library
         /// Post name.
         /// </summary>
         /// <remarks>
-        /// This property is the equivalent of name.
+        /// This property is the equivalent for name.
         /// </remarks>
         /// <value>The post name.</value>
         [JsonProperty("com")]
@@ -72,7 +72,7 @@ namespace FChan.Library
         /// Gets or sets the name of the original file.
         /// </summary>
         /// <remarks>
-        /// This property is the equivalent of filename.
+        /// This property is the equivalent for filename.
         /// </remarks>
         /// <value>The name of the original file.</value>
         [JsonProperty("filename")]
@@ -82,7 +82,7 @@ namespace FChan.Library
         /// Gets or sets the file extension.
         /// </summary>
         /// <remarks>
-        /// This property is the equivalent of ext.
+        /// This property is the equivalent for ext.
         /// </remarks>
         /// <value>The file extension.</value>
         [JsonProperty("ext")]
@@ -92,7 +92,7 @@ namespace FChan.Library
         /// Gets or sets the width of the image.
         /// </summary>
         /// <remarks>
-        /// This property is the equivalent of w.
+        /// This property is the equivalent for w.
         /// </remarks>
         /// <value>The width of the image.</value>
         [JsonProperty("w")]
@@ -102,7 +102,7 @@ namespace FChan.Library
         /// Gets or sets the height of the image.
         /// </summary>
         /// <remarks>
-        /// This property is the equivalent of h.
+        /// This property is the equivalent for h.
         /// </remarks>
         /// <value>The height of the image.</value>
         [JsonProperty("h")]
@@ -112,7 +112,7 @@ namespace FChan.Library
         /// Gets or sets the width of the thumbnail.
         /// </summary>
         /// <remarks>
-        /// This property is the equivalent of tn_w.
+        /// This property is the equivalent for tn_w.
         /// </remarks>
         /// <value>The width of the thumbnail.</value>
         [JsonProperty("tn_w")]
@@ -122,7 +122,7 @@ namespace FChan.Library
         /// Gets or sets the height of the thumbnail.
         /// </summary>
         /// <remarks>
-        /// This property is the equivalent of tn_h.
+        /// This property is the equivalent for tn_h.
         /// </remarks>
         /// <value>The height of the thumbnail.</value>
         [JsonProperty("tn_h")]
@@ -132,17 +132,27 @@ namespace FChan.Library
         /// Gets or sets the name of the renamed file.
         /// </summary>
         /// <remarks>
-        /// This property is the equivalent of tim.
+        /// This property is the equivalent for tim.
         /// </remarks>
         /// <value>The name of the renamed file.</value>
         [JsonProperty("tim")]
         public long RenamedFileName { get; set; }
 
         /// <summary>
+        /// Gets or sets the when last modified.
+        /// </summary>
+        /// <remarks>
+        /// This property is the equivalent for last_modified.
+        /// </remarks>
+        /// <value>The name of the renamed file.</value>
+        [JsonProperty("last_modified")]
+        public long LastModified { get; set; }
+
+        /// <summary>
         /// Gets or sets the unix timestamp.
         /// </summary>
         /// <remarks>
-        /// This property is the equivalent of time.
+        /// This property is the equivalent for time.
         /// </remarks>
         /// <value>The unix timestamp.</value>
         [JsonProperty("time")]
@@ -152,7 +162,7 @@ namespace FChan.Library
         /// Gets or sets the M d5.
         /// </summary>
         /// <remarks>
-        /// This property is the equivalent of md5.
+        /// This property is the equivalent for md5.
         /// </remarks>
         /// <value>The M d5.</value>
         [JsonProperty("md5")]
@@ -162,7 +172,7 @@ namespace FChan.Library
         /// Gets or sets the size of the file.
         /// </summary>
         /// <remarks>
-        /// This property is the equivalent of fsize.
+        /// This property is the equivalent for fsize.
         /// </remarks>
         /// <value>The size of the file.</value>
         [JsonProperty("fsize")]
@@ -172,7 +182,7 @@ namespace FChan.Library
         /// Gets or sets the reply to.
         /// </summary>
         /// <remarks>
-        /// This property is the equivalent of resto.
+        /// This property is the equivalent for resto.
         /// </remarks>
         /// <value>The reply to.</value>
         [JsonProperty("resto")]
@@ -182,7 +192,7 @@ namespace FChan.Library
         /// Gets or sets the file deleted.
         /// </summary>
         /// <remarks>
-        /// This property is the equivalent of filedeleted.
+        /// This property is the equivalent for filedeleted.
         /// </remarks>
         /// <value>The file deleted.</value>
         [JsonProperty("filedeleted")]
@@ -201,7 +211,7 @@ namespace FChan.Library
         /// Gets or sets the bump limit.
         /// </summary>
         /// <remarks>
-        /// This property is the equivalent of bumblimit.
+        /// This property is the equivalent for bumblimit.
         /// </remarks>
         /// <value>The bump limit.</value>
         [JsonProperty("bumplimit")]
@@ -220,7 +230,7 @@ namespace FChan.Library
         /// Gets or sets the image limit.
         /// </summary>
         /// <remarks>
-        /// This property is the equivalent of imagelimit.
+        /// This property is the equivalent for imagelimit.
         /// </remarks>
         /// <value>The image limit.</value>
         [JsonProperty("imagelimit")]
@@ -230,26 +240,102 @@ namespace FChan.Library
         /// Gets a value indicating whether this <see cref="FChan.Library.Post"/> image limit met.
         /// </summary>
         /// <remarks>
-        /// This property is a wrapper of <see cref="BumpLimit"/> since it may be 1 or 0.
+        /// This property is a wrapper of <see cref="ImageLimit"/> since it may be 1 or 0.
         /// </remarks>
         /// <value><c>true</c> if image limit has been met; otherwise, <c>false</c>.</value>
         public bool ImageLimitMet { get { return ImageLimit != 0; } }
 
         /// <summary>
+        /// Gets or sets the sticky.
+        /// </summary>
+        /// <remarks>
+        /// This property is the equivalent for sticky.
+        /// </remarks>
+        /// <value>The sticky.</value>
+        [JsonProperty("sticky")]
+        public int Sticky { get; set; }
+
+        /// <summary>
+        /// Gets a value indicating whether this <see cref="FChan.Library.Post"/> is a stickied thread.
+        /// </summary>
+        /// <remarks>
+        /// This property is a wrapper of <see cref="Sticky"/> since it may be 1 or 0.
+        /// </remarks>
+        /// <value><c>true</c> if image limit has been met; otherwise, <c>false</c>.</value>
+        public bool IsStickied { get { return Sticky != 0; } }
+
+        /// <summary>
         /// Gets or sets the thread URL slug.
         /// </summary>
         /// <remarks>
-        /// This property is the equivalent of semantic_url.
+        /// This property is the equivalent for semantic_url.
         /// </remarks>
         /// <value>The thread URL slug.</value>
         [JsonProperty("semantic_url")]
         public string ThreadUrlSlug { get; set; }
 
         /// <summary>
+        /// Gets or sets the sticky.
+        /// </summary>
+        /// <remarks>
+        /// This property is the equivalent for closed.
+        /// </remarks>
+        /// <value>The sticky.</value>
+        [JsonProperty("closed")]
+        public int Closed { get; set; }
+
+        /// <summary>
+        /// Gets a value indicating whether this <see cref="FChan.Library.Post"/> is closed.
+        /// </summary>
+        /// <remarks>
+        /// This property is a wrapper of <see cref="Closed"/> since it may be 1 or 0.
+        /// </remarks>
+        /// <value><c>true</c> if image limit has been met; otherwise, <c>false</c>.</value>
+        public bool IsClosed { get { return Closed != 0; } }
+
+        /// <summary>
+        /// Gets or sets the archived.
+        /// </summary>
+        /// <remarks>
+        /// This property is the equivalent for archived.
+        /// </remarks>
+        /// <value>The sticky.</value>
+        [JsonProperty("archived")]
+        public int Archived { get; set; }
+
+        /// <summary>
+        /// Gets a value indicating whether this <see cref="FChan.Library.Post"/> is archived.
+        /// </summary>
+        /// <remarks>
+        /// This property is a wrapper of <see cref="Archived"/> since it may be 1 or 0.
+        /// </remarks>
+        /// <value><c>true</c> if image limit has been met; otherwise, <c>false</c>.</value>
+        public bool IsArchived { get { return Archived != 0; } }
+
+        /// <summary>
+        /// Gets or sets the spoiler.
+        /// </summary>
+        /// <remarks>
+        /// This property is the equivalent for spoiler.
+        /// </remarks>
+        /// <value>The custom spoilers.</value>
+        [JsonProperty("spoiler")]
+        public int Spoiler { get; set; }
+
+        /// <summary>
+        /// Gets a value indicating whether this <see cref="FChan.Library.Post"/> has or not spoilers.
+        /// </summary>
+        /// <remarks>
+        /// This property is a wrapper of <see cref="Spoiler"/> since it may be 1 or 0.
+        /// </remarks>
+        /// <value><c>true</c> if this post has spoilers; otherwise it is, <c>false</c>.</value>
+        public bool HasSpoiler { get { return Spoiler != 0; } }
+
+        /// <summary>
         /// Gets or sets the custom spoilers.
         /// </summary>
         /// <remarks>
-        /// This property is the equivalent of custom_spoiler.
+        /// This property is the equivalent for custom_spoiler.
         /// </remarks>
         /// <value>The custom spoilers.</value>
         [JsonProperty("custom_spoiler")]
@@ -259,7 +345,7 @@ namespace FChan.Library
         /// Gets or sets the replies.
         /// </summary>
         /// <remarks>
-        /// This property is the equivalent of replies.
+        /// This property is the equivalent for replies.
         /// </remarks>
         /// <value>The replies.</value>
         [JsonProperty("replies")]
@@ -269,7 +355,7 @@ namespace FChan.Library
         /// Gets or sets the images.
         /// </summary>
         /// <remarks>
-        /// This property is the equivalent of images.
+        /// This property is the equivalent for images.
         /// </remarks>
         /// <value>The images.</value>
         [JsonProperty("images")]
@@ -279,7 +365,7 @@ namespace FChan.Library
         /// Gets or sets the replies omitted.
         /// </summary>
         /// <remarks>
-        /// This property is the equivalent of ommited_posts.
+        /// This property is the equivalent for ommited_posts.
         /// </remarks>
         /// <value>The replies omitted.</value>
         [JsonProperty("omitted_posts")]
@@ -289,7 +375,7 @@ namespace FChan.Library
         /// Gets or sets the image replies omitted.
         /// </summary>
         /// <remarks>
-        /// This property is the equivalent of omitted_images.
+        /// This property is the equivalent for omitted_images.
         /// </remarks>
         /// <value>The image replies omitted.</value>
         [JsonProperty("omitted_images")]
@@ -299,11 +385,41 @@ namespace FChan.Library
         /// Gets or sets the trip code.
         /// </summary>
         /// <remarks>
-        /// This property is the equivalent of trip.
+        /// This property is the equivalent for trip.
         /// </remarks>
         /// <value>The trip code.</value>
         [JsonProperty("trip")]
         public string TripCode { get; set; }
+
+        /// <summary>
+        /// Gets or sets the capcode.
+        /// </summary>
+        /// <remarks>
+        /// This property is the equivalent for capcode.
+        /// </remarks>
+        /// <value>The trip code.</value>
+        [JsonProperty("capcode")]
+        public string Capcode { get; set; }
+
+        /// <summary>
+        /// Gets or sets the country.
+        /// </summary>
+        /// <remarks>
+        /// This property is the equivalent for country.
+        /// </remarks>
+        /// <value>The trip code.</value>
+        [JsonProperty("country")]
+        public string Country { get; set; }
+
+        /// <summary>
+        /// Gets or sets the country name.
+        /// </summary>
+        /// <remarks>
+        /// This property is the equivalent for country_name.
+        /// </remarks>
+        /// <value>The trip code.</value>
+        [JsonProperty("country_name")]
+        public string CountryName { get; set; }
 
         /// <summary>
         /// Convert it to a json string.
