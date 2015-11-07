@@ -1,7 +1,7 @@
 # FChan
 C# wrapper for [4chan API](https://github.com/4chan/4chan-API).
 
-Retquest board info:
+Request board info:
 ```C#
   Chan.GetBoard();
 ```
