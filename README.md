@@ -18,15 +18,15 @@ Request thread:
 
 This wrapper also helps with those urls:
 ```C#
-  Chan.GetThreadPageUrl("a", 1);
+  Constants.GetThreadPageUrl("a", 1);
   
-  Chan.GetThreadUrl("a", 9001);
+  Constants.GetThreadUrl("a", 9001);
   
-  Chan.GetThumbnail("a", 1344402680740);
+  Constants.GetThumbnail("a", 1344402680740);
   
-  Chan.GetImageUrl("a", 1, ".jpeg");
+  Constants.GetImageUrl("a", 1, ".jpeg");
   
-  Chan.GetCountryFlagUrl("br");
+  Constants.GetCountryFlagUrl("br");
 ```
 
 
