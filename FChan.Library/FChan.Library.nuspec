@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>FChan.Library</id>
+    <version>1.0.0</version>
+    <title>4Chan Library</title>
+    <authors>Gabriel Giovanini</authors>
+    <owners>Gabriel Giovanini</owners>
+    <licenseUrl>https://raw.githubusercontent.com/gabrielgio/FChan/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/gabrielgio/FChan</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/gabrielgio/FChan/master/4chan.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>C# wrapper for 4chan API.</description>
+    <releaseNotes>Inital package.</releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <tags>4CHAN API</tags>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="7.0.1" />
+      <dependency id="Microsoft.Net.Http" version="2.2.29" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="./bin/Release/FChan.Library.dll" target="portable-net45+wp80+win+MonoAndroid10+xamarinios10+MonoTouch10" />
+  </files>
+</package>

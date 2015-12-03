@@ -6,8 +6,8 @@
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <ProjectGuid>{9B277F47-F822-4BCF-ADAB-B948B80E099C}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Fchan.Library.PCL</RootNamespace>
-    <AssemblyName>Fchan.Library.PCL</AssemblyName>
+    <RootNamespace>FChan.Library</RootNamespace>
+    <AssemblyName>FChan.Library</AssemblyName>
     <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
@@ -23,11 +23,11 @@
     <CustomCommands>
       <CustomCommands>
         <Command type="Custom" name="Make Native" command="cd ${TargetDir} ; mkbundle ${TargetFile} Newtonsoft.Json.dll FChan.Library.dll --deps" />
+        <Command type="Custom" name="Pack" command="cd ${ProjectDir} ; mono nuget.exe pack FChan.Library.nuspec" />
       </CustomCommands>
     </CustomCommands>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>full</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
