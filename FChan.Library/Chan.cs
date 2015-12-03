@@ -22,9 +22,7 @@ namespace FChan.Library
 					Task<string> response = client.GetStringAsync(url);
 					response.Wait();
 					string responseString = response.Result;
-
 					return JsonConvert.DeserializeObject<T>(responseString);
-
 				}
 			}
 			catch
