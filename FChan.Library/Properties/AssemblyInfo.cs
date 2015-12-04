@@ -8,4 +8,4 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyCopyright ("gabrielgiovanini")]
 [assembly: AssemblyTrademark ("")]
 [assembly: AssemblyCulture ("")]
-[assembly: AssemblyVersion ("1.0.4")]
+[assembly: AssemblyVersion ("1.0.5")]

@@ -96,7 +96,7 @@ namespace FChan.Library
         /// </remarks>
         /// <value>The width of the image.</value>
         [JsonProperty("w")]
-        public int ImageWidth { get; set; }
+        public int? ImageWidth { get; set; }
 
         /// <summary>
         /// Gets or sets the height of the image.
@@ -106,7 +106,7 @@ namespace FChan.Library
         /// </remarks>
         /// <value>The height of the image.</value>
         [JsonProperty("h")]
-        public int ImageHeight { get; set; }
+        public int? ImageHeight { get; set; }
 
         /// <summary>
         /// Gets or sets the width of the thumbnail.
@@ -116,7 +116,7 @@ namespace FChan.Library
         /// </remarks>
         /// <value>The width of the thumbnail.</value>
         [JsonProperty("tn_w")]
-        public int ThumbnailWidth { get; set; }
+        public int? ThumbnailWidth { get; set; }
 
         /// <summary>
         /// Gets or sets the height of the thumbnail.
@@ -126,7 +126,7 @@ namespace FChan.Library
         /// </remarks>
         /// <value>The height of the thumbnail.</value>
         [JsonProperty("tn_h")]
-        public int ThumbnailHeight { get; set; }
+        public int? ThumbnailHeight { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the renamed file.
@@ -136,17 +136,18 @@ namespace FChan.Library
         /// </remarks>
         /// <value>The name of the renamed file.</value>
         [JsonProperty("tim")]
-        public long RenamedFileName { get; set; }
+        public long FileName { get; set; }
 
         /// <summary>
         /// Gets or sets the when last modified.
+        /// Only displayed in threads.json, and includes replies, deletions, and sticky/closed changes
         /// </summary>
         /// <remarks>
         /// This property is the equivalent for last_modified.
         /// </remarks>
         /// <value>The name of the renamed file.</value>
         [JsonProperty("last_modified")]
-        public long LastModified { get; set; }
+        public long? LastModified { get; set; }
 
         /// <summary>
         /// Gets or sets the unix timestamp.
@@ -176,7 +177,7 @@ namespace FChan.Library
         /// </remarks>
         /// <value>The size of the file.</value>
         [JsonProperty("fsize")]
-        public int FileSize { get; set; }
+        public int? FileSize { get; set; }
 
         /// <summary>
         /// Gets or sets the reply to.
@@ -189,23 +190,31 @@ namespace FChan.Library
         public int ReplyTo { get; set; }
 
         /// <summary>
-        /// Gets or sets the file deleted.
+        /// Gets or sets the file deleted. Only displays when image uploaded
         /// </summary>
         /// <remarks>
         /// This property is the equivalent for filedeleted.
         /// </remarks>
         /// <value>The file deleted.</value>
         [JsonProperty("filedeleted")]
-        public int FileDeleted { get; set; }
+        public int? FileDeleted { get; set; }
 
         /// <summary>
-        /// Gets a value indicating whether this instance is file deleted.
+        /// Gets a value indicating whether this instance is file deleted. Only displays when image uploaded
         /// </summary>
         /// <remarks>
         /// This property is a wrapper of <see cref="FileDeleted"/> since it may be 1 or 0.
         /// </remarks>
         /// <value><c>true</c> if the file has been deleted; otherwise, <c>false</c>.</value>
-        public bool IsFileDeleted { get { return FileDeleted != 0; } }
+        public bool? IsFileDeleted
+        {
+            get 
+            {
+                if(FileDeleted.HasValue)
+                    return FileDeleted.Value != 0;
+                return null;
+            }
+        }
 
         /// <summary>
         /// Gets or sets the bump limit.
@@ -316,70 +325,84 @@ namespace FChan.Library
         /// Gets or sets the spoiler.
         /// </summary>
         /// <remarks>
-        /// This property is the equivalent for spoiler.
+        /// This property is the equivalent for spoiler. Only displays when image uploaded
         /// </remarks>
         /// <value>The custom spoilers.</value>
         [JsonProperty("spoiler")]
-        public int Spoiler { get; set; }
+        public int? Spoiler { get; set; }
 
         /// <summary>
         /// Gets a value indicating whether this <see cref="FChan.Library.Post"/> has or not spoilers.
+        /// Only displays when image uploaded
         /// </summary>
         /// <remarks>
         /// This property is a wrapper of <see cref="Spoiler"/> since it may be 1 or 0.
         /// </remarks>
         /// <value><c>true</c> if this post has spoilers; otherwise it is, <c>false</c>.</value>
-        public bool HasSpoiler { get { return Spoiler != 0; } }
+        public bool? HasSpoiler 
+        { 
+            get 
+            { 
+                if(Spoiler.HasValue)
+                    return Spoiler.Value != 0;
+                return null;
+            } 
+        }
 
         /// <summary>
         /// Gets or sets the custom spoilers.
+        /// Only display on OPs, Only displays when board has custom spoiler images
         /// </summary>
         /// <remarks>
         /// This property is the equivalent for custom_spoiler.
         /// </remarks>
         /// <value>The custom spoilers.</value>
         [JsonProperty("custom_spoiler")]
-        public int CustomSpoilers { get; set; }
+        public int? CustomSpoilers { get; set; }
 
         /// <summary>
         /// Gets or sets the replies.
+        /// Only displays on OPs
         /// </summary>
         /// <remarks>
         /// This property is the equivalent for replies.
         /// </remarks>
         /// <value>The replies.</value>
         [JsonProperty("replies")]
-        public int Replies { get; set; }
+        public int? Replies { get; set; }
 
         /// <summary>
         /// Gets or sets the images.
+        /// Only displays on OPs
         /// </summary>
         /// <remarks>
         /// This property is the equivalent for images.
         /// </remarks>
         /// <value>The images.</value>
         [JsonProperty("images")]
-        public int Images { get; set; }
+        public int? Images { get; set; }
 
         /// <summary>
         /// Gets or sets the replies omitted.
+        /// Only displays on OPs on index pages
         /// </summary>
         /// <remarks>
         /// This property is the equivalent for ommited_posts.
         /// </remarks>
         /// <value>The replies omitted.</value>
         [JsonProperty("omitted_posts")]
-        public int RepliesOmitted { get; set; }
+        public int? RepliesOmitted { get; set; }
 
         /// <summary>
         /// Gets or sets the image replies omitted.
+        /// Only displays on OPs on index pages
         /// </summary>
         /// <remarks>
         /// This property is the equivalent for omitted_images.
         /// </remarks>
         /// <value>The image replies omitted.</value>
         [JsonProperty("omitted_images")]
-        public int ImageRepliesOmitted { get; set; }
+        public int? ImageRepliesOmitted { get; set; }
 
         /// <summary>
         /// Gets or sets the trip code.
@@ -422,7 +445,26 @@ namespace FChan.Library
         public string CountryName { get; set; }
 
         /// <summary>
-        /// Convert it to a json string.
+        /// Gets or sets the identifier. (none, mod, admin, admin_highlight, developer, founder)
+        /// </summary>
+        /// <value>The identifier.</value>
+        [JsonProperty("id")]
+        public string Id { get; set;}
+
+        /// <summary>
+        /// Gets or sets the board which this post belong to.
+        /// </summary>
+        /// <value>The board.</value>
+        public string Board { get; set;}
+
+        /// <summary>
+        /// Gets a value indicating whether this instance has image.
+        /// </summary>
+        /// <value><c>true</c> if this instance has image; otherwise, <c>false</c>.</value>
+        public bool HasImage { get { return !String.IsNullOrEmpty(OriginalFileName); } }
+
+        /// <summary>
+        /// Convert this post into a json string.
         /// </summary>
         /// <returns>The json.</returns>
         public string ToJson()
@@ -431,7 +473,17 @@ namespace FChan.Library
         }
 
         /// <summary>
-        /// Convert it back from a json string.
+        /// Convert this post into a json string.
+        /// </summary>
+        /// <returns>The json.</returns>
+        /// <param name="indented">If set to <c>true</c> indented.</param>
+        public string ToJson(bool indented)
+        {
+            return JsonConvert.SerializeObject(this, indented ? Formatting.Indented : Formatting.None);
+        }
+
+        /// <summary>
+        /// Convert this post back to a Post.
         /// </summary>
         /// <returns>The json.</returns>
         /// <param name="json">Json.</param>
