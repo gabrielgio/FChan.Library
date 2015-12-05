@@ -4,7 +4,7 @@ C# wrapper for [4chan API](https://github.com/4chan/4chan-API).
 Request boards' info:
 ```C#
   Chan.GetBoard();
-  Chan.GetBoardAync();
+  Chan.GetBoardAsync();
 ```
 
 Request thread's page:
