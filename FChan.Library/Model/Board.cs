@@ -132,5 +132,13 @@ namespace FChan.Library
         /// <value>The math tags.</value>
         [JsonProperty("math_tags")]
         public int? MathTags { get; set; }
+
+        /// <summary>
+        /// Returns the full title of the board, like on the actual website
+        /// </summary>
+        public override string ToString()
+        {
+            return "/" + BoardName + "/ - " + Title;
+        }
     }
 }
