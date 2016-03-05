@@ -3,12 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FChan.Library", "FChan.Library\FChan.Library.csproj", "{9B277F47-F822-4BCF-ADAB-B948B80E099C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FChan.Library.Test", "FChan.Library.Test\FChan.Library.Test.csproj", "{0A5558ED-0512-4B33-9BEA-9325FE913FA7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A5558ED-0512-4B33-9BEA-9325FE913FA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A5558ED-0512-4B33-9BEA-9325FE913FA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A5558ED-0512-4B33-9BEA-9325FE913FA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A5558ED-0512-4B33-9BEA-9325FE913FA7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9B277F47-F822-4BCF-ADAB-B948B80E099C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9B277F47-F822-4BCF-ADAB-B948B80E099C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B277F47-F822-4BCF-ADAB-B948B80E099C}.Release|Any CPU.ActiveCfg = Release|Any CPU
