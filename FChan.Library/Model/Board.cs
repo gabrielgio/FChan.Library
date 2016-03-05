@@ -138,7 +138,7 @@ namespace FChan.Library
         /// </summary>
         public override string ToString()
         {
-            return string.Format("{0} - {1}[{2}]", BoardName, Title, Pages);
+            return string.Format("/{0}/{1}[{2}]", BoardName, Title, Pages);
         }
     }
 }
