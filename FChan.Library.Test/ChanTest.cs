@@ -7,12 +7,12 @@ namespace FChan.Library.Test
     public class ChanTest
     {
         [Test()]
-        public void GetBoardTest()
+        public void GetBoard()
         {
             try
             {
                 BoardRootObject board = Chan.GetBoard();
-                Assert.AreEqual(board, null);
+				Assert.NotNull(board);
             }
             catch(Exception e)
             {
@@ -21,12 +21,12 @@ namespace FChan.Library.Test
         }
 
         [Test()]
-        public async void GetBoardAyncTest()
+        public async void GetBoardAync()
         {
             try
             {
                 BoardRootObject board = await Chan.GetBoardAsync();
-                Assert.AreNotEqual(board, null);
+				Assert.NotNull(board);
             }
             catch(Exception e)
             {
@@ -35,12 +35,12 @@ namespace FChan.Library.Test
         }
 
         [Test()]
-        public void GetThreadPageTest()
+        public void GetThreadPage()
         {
             try
             {
                 ThreadRootObject thread = Chan.GetThreadPage("a",1);
-                Assert.AreNotEqual(thread, null);
+				Assert.NotNull(thread);
             }
             catch(Exception e)
             {
@@ -49,7 +49,7 @@ namespace FChan.Library.Test
         }
 
         [Test()]
-        public async void GetThreadPageAsyncTest()
+        public async void GetThreadPageAsync()
         {
             try
             {
@@ -62,29 +62,112 @@ namespace FChan.Library.Test
             }
         }
 
+		[Test()]
+		public async void GetAllBoardsAsync()
+		{
+			BoardRootObject boardRoot = Chan.GetBoard();
+			Assert.NotNull(boardRoot);
 
-        [Test()]
-        public async void GetAllThread()
-        {
-            try
-            {
-                ThreadRootObject thread = await Chan.GetThreadPageAsync("a",1);
+			foreach (var board in boardRoot.Boards) 
+			{
+				for (int i = 1; i <= board.Pages; i++)
+				{
+					ThreadRootObject thread = await Chan.GetThreadPageAsync(board.BoardName, i);
 
-                foreach (var item in thread.Threads) 
-                {
-                    Assert.AreNotEqual(item, null);
+					Assert.NotNull(thread);
 
-                    foreach (var post in item.Posts) 
-                    {
-                        Assert.AreNotEqual(post, null);
-                        Assert.AreNotEqual(post.PostNumber, 0);
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                Assert.Fail(e.Message);
-            }
-        }
+					foreach (var item in thread.Threads) 
+					{
+						Assert.NotNull(item);
+
+						foreach (var post in item.Posts) 
+						{
+							Assert.NotNull(post);
+							Assert.AreNotEqual(post.PostNumber, 0);
+						}
+					}
+				}
+			}
+		}
+
+		[Test()]
+		public async void GetAllThreadAsync()
+		{
+			try
+			{
+				ThreadRootObject thread = await Chan.GetThreadPageAsync("a",1);
+
+				Assert.NotNull(thread);
+
+				foreach (var item in thread.Threads) 
+				{
+					Assert.NotNull(item);
+
+					foreach (var post in item.Posts) 
+					{
+						Assert.NotNull(post);
+						Assert.AreNotEqual(post.PostNumber, 0);
+					}
+				}
+			}
+			catch(Exception e)
+			{
+				Assert.Fail(e.Message);
+			}
+		}
+
+		[Test()]
+		public void GetAllBoards()
+		{
+			BoardRootObject boardRoot = Chan.GetBoard();
+			Assert.NotNull(boardRoot);
+
+			foreach (var board in boardRoot.Boards) 
+			{
+				for (int i = 1; i <= board.Pages; i++)
+				{
+					ThreadRootObject thread = Chan.GetThreadPage(board.BoardName, i);
+
+					Assert.NotNull(thread);
+
+					foreach (var item in thread.Threads) 
+					{
+						Assert.NotNull(item);
+
+						foreach (var post in item.Posts) 
+						{
+							Assert.NotNull(post);
+							Assert.AreNotEqual(post.PostNumber, 0);
+						}
+					}
+				}
+			}
+		}
+
+		[Test()]
+		public void GetAllThread()
+		{
+			try
+			{
+				ThreadRootObject thread = Chan.GetThreadPage("a",1);
+
+				Assert.NotNull(thread);
+
+				foreach (var item in thread.Threads) 
+				{
+					Assert.NotNull(item);
+
+					foreach (var post in item.Posts) 
+					{
+						Assert.NotNull(post);
+						Assert.AreNotEqual(post.PostNumber, 0);
+					}
+				}
+			}
+			catch(Exception e)
+			{
+				Assert.Fail(e.Message);
+			}
+		}
     }
 }
