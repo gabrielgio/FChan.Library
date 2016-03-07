@@ -452,7 +452,7 @@ namespace FChan.Library
         public string Id { get; set;}
 
         /// <summary>
-        /// Gets or sets the board which this post belong to.
+        /// Gets or sets the board which this post belongs to.
         /// </summary>
         /// <value>The board.</value>
         public string Board { get; set;}
