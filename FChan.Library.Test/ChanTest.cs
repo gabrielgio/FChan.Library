@@ -12,7 +12,7 @@ namespace FChan.Library.Test
             try
             {
                 BoardRootObject board = Chan.GetBoard();
-				Assert.NotNull(board);
+                Assert.NotNull(board);
             }
             catch(Exception e)
             {
@@ -26,7 +26,7 @@ namespace FChan.Library.Test
             try
             {
                 BoardRootObject board = await Chan.GetBoardAsync();
-				Assert.NotNull(board);
+                Assert.NotNull(board);
             }
             catch(Exception e)
             {
@@ -40,7 +40,7 @@ namespace FChan.Library.Test
             try
             {
                 ThreadRootObject thread = Chan.GetThreadPage("a",1);
-				Assert.NotNull(thread);
+                Assert.NotNull(thread);
             }
             catch(Exception e)
             {
@@ -62,112 +62,112 @@ namespace FChan.Library.Test
             }
         }
 
-		[Test()]
-		public async void GetAllBoardsAsync()
-		{
-			BoardRootObject boardRoot = Chan.GetBoard();
-			Assert.NotNull(boardRoot);
+        [Test()]
+        public async void GetAllBoardsAsync()
+        {
+            BoardRootObject boardRoot = Chan.GetBoard();
+            Assert.NotNull(boardRoot);
 
-			foreach (var board in boardRoot.Boards) 
-			{
-				for (int i = 1; i <= board.Pages; i++)
-				{
-					ThreadRootObject thread = await Chan.GetThreadPageAsync(board.BoardName, i);
+            foreach (var board in boardRoot.Boards) 
+            {
+                for (int i = 1; i <= board.Pages; i++)
+                {
+                    ThreadRootObject thread = await Chan.GetThreadPageAsync(board.BoardName, i);
 
-					Assert.NotNull(thread);
+                    Assert.NotNull(thread);
 
-					foreach (var item in thread.Threads) 
-					{
-						Assert.NotNull(item);
+                    foreach (var item in thread.Threads) 
+                    {
+                        Assert.NotNull(item);
 
-						foreach (var post in item.Posts) 
-						{
-							Assert.NotNull(post);
-							Assert.AreNotEqual(post.PostNumber, 0);
-						}
-					}
-				}
-			}
-		}
+                        foreach (var post in item.Posts) 
+                        {
+                            Assert.NotNull(post);
+                            Assert.AreNotEqual(post.PostNumber, 0);
+                        }
+                    }
+                }
+            }
+        }
 
-		[Test()]
-		public async void GetAllThreadAsync()
-		{
-			try
-			{
-				ThreadRootObject thread = await Chan.GetThreadPageAsync("a",1);
+        [Test()]
+        public async void GetAllThreadAsync()
+        {
+            try
+            {
+                ThreadRootObject thread = await Chan.GetThreadPageAsync("a",1);
 
-				Assert.NotNull(thread);
+                Assert.NotNull(thread);
 
-				foreach (var item in thread.Threads) 
-				{
-					Assert.NotNull(item);
+                foreach (var item in thread.Threads) 
+                {
+                    Assert.NotNull(item);
 
-					foreach (var post in item.Posts) 
-					{
-						Assert.NotNull(post);
-						Assert.AreNotEqual(post.PostNumber, 0);
-					}
-				}
-			}
-			catch(Exception e)
-			{
-				Assert.Fail(e.Message);
-			}
-		}
+                    foreach (var post in item.Posts) 
+                    {
+                        Assert.NotNull(post);
+                        Assert.AreNotEqual(post.PostNumber, 0);
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                Assert.Fail(e.Message);
+            }
+        }
 
-		[Test()]
-		public void GetAllBoards()
-		{
-			BoardRootObject boardRoot = Chan.GetBoard();
-			Assert.NotNull(boardRoot);
+        [Test()]
+        public void GetAllBoards()
+        {
+            BoardRootObject boardRoot = Chan.GetBoard();
+            Assert.NotNull(boardRoot);
 
-			foreach (var board in boardRoot.Boards) 
-			{
-				for (int i = 1; i <= board.Pages; i++)
-				{
-					ThreadRootObject thread = Chan.GetThreadPage(board.BoardName, i);
+            foreach (var board in boardRoot.Boards) 
+            {
+                for (int i = 1; i <= board.Pages; i++)
+                {
+                    ThreadRootObject thread = Chan.GetThreadPage(board.BoardName, i);
 
-					Assert.NotNull(thread);
+                    Assert.NotNull(thread);
 
-					foreach (var item in thread.Threads) 
-					{
-						Assert.NotNull(item);
+                    foreach (var item in thread.Threads) 
+                    {
+                        Assert.NotNull(item);
 
-						foreach (var post in item.Posts) 
-						{
-							Assert.NotNull(post);
-							Assert.AreNotEqual(post.PostNumber, 0);
-						}
-					}
-				}
-			}
-		}
+                        foreach (var post in item.Posts) 
+                        {
+                            Assert.NotNull(post);
+                            Assert.AreNotEqual(post.PostNumber, 0);
+                        }
+                    }
+                }
+            }
+        }
 
-		[Test()]
-		public void GetAllThread()
-		{
-			try
-			{
-				ThreadRootObject thread = Chan.GetThreadPage("a",1);
+        [Test()]
+        public void GetAllThread()
+        {
+            try
+            {
+                ThreadRootObject thread = Chan.GetThreadPage("a",1);
 
-				Assert.NotNull(thread);
+                Assert.NotNull(thread);
 
-				foreach (var item in thread.Threads) 
-				{
-					Assert.NotNull(item);
+                foreach (var item in thread.Threads) 
+                {
+                    Assert.NotNull(item);
 
-					foreach (var post in item.Posts) 
-					{
-						Assert.NotNull(post);
-						Assert.AreNotEqual(post.PostNumber, 0);
-					}
-				}
-			}
-			catch(Exception e)
-			{
-				Assert.Fail(e.Message);
-			}
-		}
+                    foreach (var post in item.Posts) 
+                    {
+                        Assert.NotNull(post);
+                        Assert.AreNotEqual(post.PostNumber, 0);
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                Assert.Fail(e.Message);
+            }
+        }
     }
 }

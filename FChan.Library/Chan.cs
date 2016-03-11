@@ -1,51 +1,67 @@
 ﻿using System;
-using System.Net;
+using System.Diagnostics;
 using System.IO;
-using Newtonsoft.Json;
-using System.Threading.Tasks;
+using System.Net;
+using System.Runtime.Serialization.Json;
 using System.Text;
-using System.Net.Http;
-using System.Linq;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace FChan.Library
 {
-	/// <summary>
-	/// Chan.
-	/// </summary>
-	public static class Chan
-	{
+    /// <summary>
+    /// Chan.
+    /// </summary>
+    public static class Chan
+    {
         internal static T DownloadObject<T>(string url)
         {
-            try
-            {
-                using (var client = new HttpClient())
-                {
-                    Task<string> response = client.GetStringAsync(url);
-                    response.Wait();
-                    string responseString = response.Result;
-                    return JsonConvert.DeserializeObject<T>(responseString);
-                }
-            }
-            catch
-            {
-                return default(T);
-            }
+            var task = DownloadObjectAsync<T>(url);
+            task.Wait();
+            return task.Result;
         }
 
         internal static async Task<T> DownloadObjectAsync<T>(string url)
         {
             try
             {
-                using (var client = new HttpClient())
-                {
-                    string response = await client.GetStringAsync(url);
-                    string responseString = response;
-                    return JsonConvert.DeserializeObject<T>(responseString);
-                }
+                string response = await GetStringAsync(url);
+                string responseString = response;
+                return JsonConvert.DeserializeObject<T>(responseString);
             }
-            catch
+            catch (Exception e)
             {
                 return default(T);
+            }
+        }
+
+        public static async Task<string> GetStringAsync(string url)
+        {
+            var request = WebRequest.CreateHttp(url);
+            request.Method = "GET";
+
+            var task = new TaskCompletionSource<WebResponse>();
+
+            request.BeginGetResponse(ac =>
+            {
+                try
+                {
+                    task.SetResult(request.EndGetResponse(ac));
+                }
+                catch (Exception e)
+                {
+                    task.SetException(e);
+                }
+            }, null);
+
+            using (var response = await task.Task)
+            using (var stream = response.GetResponseStream())
+            using (var output = new MemoryStream())
+            {
+
+                await stream.CopyToAsync(output);
+                var array = output.ToArray();
+                return Encoding.UTF8.GetString(array, 0, array.Length);
             }
         }
 
@@ -78,7 +94,7 @@ namespace FChan.Library
             ThreadRootObject thread = DownloadObject<ThreadRootObject>(Constants.GetThreadPageUrl(board, page));
 
             foreach (Thread item in thread.Threads)
-                foreach (Post post in item.Posts) 
+                foreach (Post post in item.Posts)
                     post.Board = board;
 
             return thread;
@@ -95,7 +111,7 @@ namespace FChan.Library
             ThreadRootObject thread = await DownloadObjectAsync<ThreadRootObject>(Constants.GetThreadPageUrl(board, page));
 
             foreach (Thread item in thread.Threads)
-                foreach (Post post in item.Posts) 
+                foreach (Post post in item.Posts)
                     post.Board = board;
 
             return thread;
@@ -130,5 +146,5 @@ namespace FChan.Library
 
             return thread;
         }
-	}
+    }
 }
