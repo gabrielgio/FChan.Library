@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>FChan.Library</id>
-        <version>1.0.7</version>
+        <version>1.0.8</version>
         <title>4Chan Library</title>
         <authors>Gabriel Giovanini</authors>
         <owners>Gabriel Giovanini</owners>
@@ -12,23 +12,18 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>C# wrapper for 4chan API.</description>
         <releaseNotes>
-          Added property Board to Post model class.
-          Some minors changes.
+          Removed Microsoft.Net.Http dependency. Thanks Cologler from GitHub.
         </releaseNotes>
         <copyright>Copyright 2015</copyright>
         <language>en-US</language>
         <tags>4CHAN API</tags>
         <dependencies>
-            <dependency id="Newtonsoft.Json" version="8.0.2" />
-            <dependency id="Microsoft.Net.Http" version="2.2.29" />
+            <dependency id="Newtonsoft.Json" version="8.0.3" />
         </dependencies>
     </metadata>
     <files>
-        <file src="bin\Release\FChan.Library.dll" target="lib\portable-net45+wp80+win+MonoAndroid10+xamarinios10+MonoTouch10\FChan.Library.dll" />
-        <file src="bin\Release\FChan.Library.xml" target="lib\portable-net45+wp80+win+MonoAndroid10+xamarinios10+MonoTouch10\FChan.Library.xml" />
-        <file src="bin\Release\Newtonsoft.Json.dll" target="lib\portable-net45+wp80+win+MonoAndroid10+xamarinios10+MonoTouch10\Newtonsoft.Json.dll" />
-        <file src="bin\Release\System.Net.Http.dll" target="lib\portable-net45+wp80+win+MonoAndroid10+xamarinios10+MonoTouch10\System.Net.Http.dll" />
-        <file src="bin\Release\System.Net.Http.Extensions.dll" target="lib\portable-net45+wp80+win+MonoAndroid10+xamarinios10+MonoTouch10\System.Net.Http.Extensions.dll" />
-        <file src="bin\Release\System.Net.Http.Primitives.dll" target="lib\portable-net45+wp80+win+MonoAndroid10+xamarinios10+MonoTouch10\System.Net.Http.Primitives.dll" />
+        <file src="bin/Release/FChan.Library.dll" target="lib\portable-net45+wp80+win+MonoAndroid10+xamarinios10+MonoTouch10\FChan.Library.dll" />
+        <file src="bin/Release/FChan.Library.xml" target="lib\portable-net45+wp80+win+MonoAndroid10+xamarinios10+MonoTouch10\FChan.Library.xml" />
+        <file src="bin/Release/Newtonsoft.Json.dll" target="lib\portable-net45+wp80+win+MonoAndroid10+xamarinios10+MonoTouch10\Newtonsoft.Json.dll" />
     </files>
 </package>

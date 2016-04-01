@@ -33,7 +33,7 @@ namespace FChan.Library
             }
         }
 
-        public static async Task<string> GetStringAsync(string url)
+        private static async Task<string> GetStringAsync(string url)
         {
             var request = WebRequest.CreateHttp(url);
             request.Method = "GET";
