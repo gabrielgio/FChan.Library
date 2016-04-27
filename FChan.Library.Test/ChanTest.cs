@@ -63,34 +63,6 @@ namespace FChan.Library.Test
         }
 
         [Test()]
-        public async void GetAllBoardsAsync()
-        {
-            BoardRootObject boardRoot = Chan.GetBoard();
-            Assert.NotNull(boardRoot);
-
-            foreach (var board in boardRoot.Boards) 
-            {
-                for (int i = 1; i <= board.Pages; i++)
-                {
-                    ThreadRootObject thread = await Chan.GetThreadPageAsync(board.BoardName, i);
-
-                    Assert.NotNull(thread);
-
-                    foreach (var item in thread.Threads) 
-                    {
-                        Assert.NotNull(item);
-
-                        foreach (var post in item.Posts) 
-                        {
-                            Assert.NotNull(post);
-                            Assert.AreNotEqual(post.PostNumber, 0);
-                        }
-                    }
-                }
-            }
-        }
-
-        [Test()]
         public async void GetAllThreadAsync()
         {
             try
@@ -116,33 +88,6 @@ namespace FChan.Library.Test
             }
         }
 
-        [Test()]
-        public void GetAllBoards()
-        {
-            BoardRootObject boardRoot = Chan.GetBoard();
-            Assert.NotNull(boardRoot);
-
-            foreach (var board in boardRoot.Boards) 
-            {
-                for (int i = 1; i <= board.Pages; i++)
-                {
-                    ThreadRootObject thread = Chan.GetThreadPage(board.BoardName, i);
-
-                    Assert.NotNull(thread);
-
-                    foreach (var item in thread.Threads) 
-                    {
-                        Assert.NotNull(item);
-
-                        foreach (var post in item.Posts) 
-                        {
-                            Assert.NotNull(post);
-                            Assert.AreNotEqual(post.PostNumber, 0);
-                        }
-                    }
-                }
-            }
-        }
 
         [Test()]
         public void GetAllThread()
