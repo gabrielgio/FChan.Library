@@ -1,3 +1,4 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/7jnipq5kkf97m74k?svg=true)](https://ci.appveyor.com/project/gabrielgio/fchan-library)
 # FChan
 C# wrapper for [4chan API](https://github.com/4chan/4chan-API).
 
