@@ -78,7 +78,7 @@ namespace FChan.Library.Test
                     foreach (var post in item.Posts) 
                     {
                         Assert.NotNull(post);
-                        Assert.AreNotEqual(post.PostNumber, 0);
+                        Assert.AreNotEqual(post.PostNumber, default(int));
                     }
                 }
             }

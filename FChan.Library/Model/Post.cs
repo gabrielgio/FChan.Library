@@ -49,22 +49,32 @@ namespace FChan.Library
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets the post name.
+        /// Time when archived.
         /// </summary>
         /// <remarks>
-        /// This property is the equivalent for name.
+        /// This property is the equivalent for archived_on.
         /// </remarks>
-        /// <value>The post name.</value>
+        /// <value>Time when archived.</value>
+        [JsonProperty("archived_on")]
+        public int ArchivedOn { get; set; }
+
+        /// <summary>
+        /// Gets or sets the subject.
+        /// </summary>
+        /// <remarks>
+        /// This property is the equivalent for sub.
+        /// </remarks>
+        /// <value>Subject.</value>
         [JsonProperty("sub")]
         public string Subject { get; set; }
 
         /// <summary>
-        /// Post name.
+        /// Comment name.
         /// </summary>
         /// <remarks>
-        /// This property is the equivalent for name.
+        /// This property is the equivalent for com.
         /// </remarks>
-        /// <value>The post name.</value>
+        /// <value>Comment.</value>
         [JsonProperty("com")]
         public string Comment { get; set; }
 
