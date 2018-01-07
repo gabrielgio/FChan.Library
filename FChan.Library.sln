@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FChan.Library", "FChan.Library\FChan.Library.csproj", "{1CCB6D89-FA6B-4047-BC27-095ADE48944B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FChan.Library.Test", "FChan.Library.Test\FChan.Library.Test.csproj", "{5619D620-5622-4380-8283-ECB32909177B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1CCB6D89-FA6B-4047-BC27-095ADE48944B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CCB6D89-FA6B-4047-BC27-095ADE48944B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CCB6D89-FA6B-4047-BC27-095ADE48944B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CCB6D89-FA6B-4047-BC27-095ADE48944B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5619D620-5622-4380-8283-ECB32909177B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5619D620-5622-4380-8283-ECB32909177B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5619D620-5622-4380-8283-ECB32909177B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5619D620-5622-4380-8283-ECB32909177B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

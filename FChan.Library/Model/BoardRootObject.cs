@@ -4,12 +4,12 @@ using Newtonsoft.Json;
 namespace FChan.Library
 {
     /// <summary>
-    /// Board root object.
+    ///     Board root object.
     /// </summary>
     public class BoardRootObject
     {
         /// <summary>
-        /// Gets or sets the boards.
+        ///     Gets or sets the boards.
         /// </summary>
         /// <value>The boards.</value>
         [JsonProperty("boards")]

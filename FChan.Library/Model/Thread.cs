@@ -4,12 +4,12 @@ using Newtonsoft.Json;
 namespace FChan.Library
 {
     /// <summary>
-    /// Thread.
+    ///     Thread.
     /// </summary>
     public class Thread
     {
         /// <summary>
-        /// Gets or sets the posts.
+        ///     Gets or sets the posts.
         /// </summary>
         /// <value>The posts.</value>
         [JsonProperty("posts")]

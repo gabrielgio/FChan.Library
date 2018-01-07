@@ -1,118 +1,73 @@
-﻿using NUnit.Framework;
-using System;
+﻿using Xunit;
 
 namespace FChan.Library.Test
 {
-    [TestFixture()]
     public class ChanTest
     {
-        [Test()]
-        public void GetBoard()
-        {
-            try
-            {
-                BoardRootObject board = Chan.GetBoard();
-                Assert.NotNull(board);
-            }
-            catch(Exception e)
-            {
-                Assert.Fail(e.Message);
-            }
-        }
-
-        [Test()]
-        public async void GetBoardAync()
-        {
-            try
-            {
-                BoardRootObject board = await Chan.GetBoardAsync();
-                Assert.NotNull(board);
-            }
-            catch(Exception e)
-            {
-                Assert.Fail(e.Message);
-            }
-        }
-
-        [Test()]
-        public void GetThreadPage()
-        {
-            try
-            {
-                ThreadRootObject thread = Chan.GetThreadPage("a",1);
-                Assert.NotNull(thread);
-            }
-            catch(Exception e)
-            {
-                Assert.Fail(e.Message);
-            }
-        }
-
-        [Test()]
-        public async void GetThreadPageAsync()
-        {
-            try
-            {
-                ThreadRootObject thread = await Chan.GetThreadPageAsync("a",1);
-                Assert.AreNotEqual(thread, null);
-            }
-            catch(Exception e)
-            {
-                Assert.Fail(e.Message);
-            }
-        }
-
-        [Test()]
-        public async void GetAllThreadAsync()
-        {
-            try
-            {
-                ThreadRootObject thread = await Chan.GetThreadPageAsync("a",1);
-
-                Assert.NotNull(thread);
-
-                foreach (var item in thread.Threads) 
-                {
-                    Assert.NotNull(item);
-
-                    foreach (var post in item.Posts) 
-                    {
-                        Assert.NotNull(post);
-                        Assert.AreNotEqual(post.PostNumber, default(int));
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                Assert.Fail(e.Message);
-            }
-        }
-
-
-        [Test()]
+        [Fact]
         public void GetAllThread()
         {
-            try
+            var thread = Chan.GetThreadPage("a", 1);
+
+            Assert.NotNull(thread);
+
+            foreach (var item in thread.Threads)
             {
-                ThreadRootObject thread = Chan.GetThreadPage("a",1);
+                Assert.NotNull(item);
 
-                Assert.NotNull(thread);
-
-                foreach (var item in thread.Threads) 
+                foreach (var post in item.Posts)
                 {
-                    Assert.NotNull(item);
-
-                    foreach (var post in item.Posts) 
-                    {
-                        Assert.NotNull(post);
-                        Assert.AreNotEqual(post.PostNumber, 0);
-                    }
+                    Assert.NotNull(post);
+                    Assert.NotEqual(post.PostNumber, 0);
                 }
             }
-            catch(Exception e)
+        }
+
+        [Fact]
+        public async void GetAllThreadAsync()
+        {
+            var thread = await Chan.GetThreadPageAsync("a", 1);
+
+            Assert.NotNull(thread);
+
+            foreach (var item in thread.Threads)
             {
-                Assert.Fail(e.Message);
+                Assert.NotNull(item);
+
+                foreach (var post in item.Posts)
+                {
+                    Assert.NotNull(post);
+                    Assert.NotEqual(post.PostNumber, default(int));
+                }
             }
+        }
+
+        [Fact]
+        public void GetBoard()
+        {
+            var board = Chan.GetBoard();
+            Assert.NotNull(board);
+        }
+
+        [Fact]
+        public async void GetBoardAync()
+        {
+            var board = await Chan.GetBoardAsync();
+            Assert.NotNull(board);
+        }
+
+        [Fact]
+        public void GetThreadPage()
+        {
+            var thread = Chan.GetThreadPage("a", 1);
+            Assert.NotNull(thread);
+        }
+
+        [Fact]
+        public async void GetThreadPageAsync()
+        {
+            var thread = await Chan.GetThreadPageAsync("a", 1);
+            Assert.NotEqual(thread, null);
         }
     }
 }

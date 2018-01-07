@@ -1,79 +1,77 @@
-﻿using System;
-
-namespace FChan.Library
+﻿namespace FChan.Library
 {
     /// <summary>
-    /// Constants.
+    ///     Constants.
     /// </summary>
     public static class Constants
     {
         /// <summary>
-        /// The board URL.
+        ///     The board URL.
         /// </summary>
         public const string BoardUrl = "https://a.4cdn.org/boards.json";
 
         /// <summary>
-        /// The thread page URL.
+        ///     The thread page URL.
         /// </summary>
         public const string ThreadPageUrl = "https://a.4cdn.org/{0}/{1}.json";
 
         /// <summary>
-        /// The thread URL.
+        ///     The thread URL.
         /// </summary>
         public const string ThreadUrl = "https://a.4cdn.org/{0}/thread/{1}.json";
-        
+
         /// <summary>
-        /// The image URL.
+        ///     The image URL.
         /// </summary>
         public const string ImageUrl = "https://i.4cdn.org/{0}/{1}{2}";
 
         /// <summary>
-        /// The thumbnail URL.
+        ///     The thumbnail URL.
         /// </summary>
         public const string ThumbnailUrl = "https://i.4cdn.org/{0}/{1}s.jpg";
-        
+
         /// <summary>
-        /// The spoiler image URL.
+        ///     The spoiler image URL.
         /// </summary>
         public const string SpoilerImageUrl = "https://s.4cdn.org/image/spoiler.png";
 
         /// <summary>
-        /// The closed thread icon URL.
+        ///     The closed thread icon URL.
         /// </summary>
         public const string ClosedThreadIconUrl = "https://s.4cdn.org/image/closed.gif";
 
         /// <summary>
-        /// The sticky thread icon URL.
+        ///     The sticky thread icon URL.
         /// </summary>
         public const string StickyThreadIconUrl = "https://s.4cdn.org/image/sticky.gif";
 
         /// <summary>
-        /// The mod capcode icon URL.
+        ///     The mod capcode icon URL.
         /// </summary>
         public const string ModCapcodeIconUrl = "https://s.4cdn.org/image/modicon.gif";
 
         /// <summary>
-        /// The developer capcode icon URL.
+        ///     The developer capcode icon URL.
         /// </summary>
         public const string DeveloperCapcodeIconUrl = "https://s.4cdn.org/image/developericon.gif";
 
         /// <summary>
-        /// The op file deleted icon URL.
+        ///     The op file deleted icon URL.
         /// </summary>
         public const string OpFileDeletedIconUrl = "https://s.4cdn.org/image/filedeleted.gif";
 
         /// <summary>
-        /// The replied file deleted icon URL.
+        ///     The replied file deleted icon URL.
         /// </summary>
         public const string RepliedFileDeletedIconUrl = "https://s.4cdn.org/image/filedeleted-res.gif";
 
         /// <summary>
-        /// The country flag URL.
+        ///     The country flag URL.
         /// </summary>
         public const string CountryFlagUrl = "https://s.4cdn.org/image/country/{0}.gif";
 
         /// <summary>
-        /// Gets the country flag URL.
+        ///     Gets the country flag URL.
         /// </summary>
         /// <returns>The country flag URL.</returns>
         /// <param name="country">Country.</param>
@@ -83,7 +81,7 @@ namespace FChan.Library
         }
 
         /// <summary>
-        /// Gets the thread page URL.
+        ///     Gets the thread page URL.
         /// </summary>
         /// <returns>The thread page URL.</returns>
         /// <param name="board">Board.</param>
@@ -94,7 +92,7 @@ namespace FChan.Library
         }
 
         /// <summary>
-        /// Gets the thread URL.
+        ///     Gets the thread URL.
         /// </summary>
         /// <returns>The thread URL.</returns>
         /// <param name="board">Board.</param>
@@ -105,7 +103,7 @@ namespace FChan.Library
         }
 
         /// <summary>
-        /// Gets the thumbnail.
+        ///     Gets the thumbnail.
         /// </summary>
         /// <returns>The thumbnail.</returns>
         /// <param name="board">Board.</param>
@@ -116,7 +114,7 @@ namespace FChan.Library
         }
 
         /// <summary>
-        /// Gets the image URL.
+        ///     Gets the image URL.
         /// </summary>
         /// <returns>The image URL.</returns>
         /// <param name="board">Board.</param>
@@ -128,4 +126,3 @@ namespace FChan.Library
         }
     }
 }
-
