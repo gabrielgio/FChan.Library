@@ -465,6 +465,12 @@ namespace FChan.Library
         /// </summary>
         /// <value>The board.</value>
         public string Board { get; set; }
+       
+        /// <summary>
+        /// Year 4chan Pass bought.
+        /// </summary>
+        [JsonProperty("since4pass")]
+        public int Since4Pass { get; set; }
 
         /// <summary>
         ///     Gets a value indicating whether this instance has image.
