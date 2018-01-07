@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>2.0.0-beta</Version>
+    <Version>2.0.0</Version>
     <PackageId>FChan.Library</PackageId>
     <Authors>Gabriel Giovanini</Authors>
     <Description>Awesome application logging utility</Description>
