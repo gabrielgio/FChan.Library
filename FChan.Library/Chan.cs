@@ -1,9 +1,11 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using static FChan.Library.Constants;
 
 namespace FChan.Library
 {
@@ -12,14 +14,14 @@ namespace FChan.Library
     /// </summary>
     public static class Chan
     {
-        internal static T DownloadObject<T>(string url)
+        private static T DownloadObject<T>(string url)
         {
             var task = DownloadObjectAsync<T>(url);
             task.Wait();
             return task.Result;
         }
 
-        internal static async Task<T> DownloadObjectAsync<T>(string url)
+        private static async Task<T> DownloadObjectAsync<T>(string url)
         {
             try
             {
@@ -56,7 +58,7 @@ namespace FChan.Library
             using (var stream = response.GetResponseStream())
             using (var output = new MemoryStream())
             {
-                await stream.CopyToAsync(output);
+                if (stream != null) await stream.CopyToAsync(output);
                 var array = output.ToArray();
                 return Encoding.UTF8.GetString(array, 0, array.Length);
             }
@@ -66,19 +68,13 @@ namespace FChan.Library
         ///     Gets boards info.
         /// </summary>
         /// <returns>The board.</returns>
-        public static BoardRootObject GetBoard()
-        {
-            return DownloadObject<BoardRootObject>(Constants.BoardUrl);
-        }
+        public static BoardRootObject GetBoard() => DownloadObject<BoardRootObject>(BoardUrl);
 
         /// <summary>
         ///     Gets boards info asynchronously.
         /// </summary>
         /// <returns>The board.</returns>
-        public static async Task<BoardRootObject> GetBoardAsync()
-        {
-            return await DownloadObjectAsync<BoardRootObject>(Constants.BoardUrl);
-        }
+        public static Task<BoardRootObject> GetBoardAsync() => DownloadObjectAsync<BoardRootObject>(BoardUrl);
 
         /// <summary>
         ///     Gets thead root object.
@@ -88,10 +84,9 @@ namespace FChan.Library
         /// <param name="page">Page.</param>
         public static ThreadRootObject GetThreadPage(string board, int page)
         {
-            var thread = DownloadObject<ThreadRootObject>(Constants.GetThreadPageUrl(board, page));
+            var thread = DownloadObject<ThreadRootObject>(GetThreadPageUrl(board, page));
 
-            foreach (var item in thread.Threads)
-            foreach (var post in item.Posts)
+            foreach (var post in thread.Threads.SelectMany(item => item.Posts))
                 post.Board = board;
 
             return thread;
@@ -105,10 +100,9 @@ namespace FChan.Library
         /// <param name="page">Page.</param>
         public static async Task<ThreadRootObject> GetThreadPageAsync(string board, int page)
         {
-            var thread = await DownloadObjectAsync<ThreadRootObject>(Constants.GetThreadPageUrl(board, page));
+            var thread = await DownloadObjectAsync<ThreadRootObject>(GetThreadPageUrl(board, page));
 
-            foreach (var item in thread.Threads)
-            foreach (var post in item.Posts)
+            foreach (var post in thread.Threads.SelectMany(item => item.Posts))
                 post.Board = board;
 
             return thread;
@@ -122,7 +116,7 @@ namespace FChan.Library
         /// <param name="threadNumber">Thread number.</param>
         public static Thread GetThread(string board, int threadNumber)
         {
-            var thread = DownloadObject<Thread>(Constants.GetThreadUrl(board, threadNumber));
+            var thread = DownloadObject<Thread>(GetThreadUrl(board, threadNumber));
             foreach (var item in thread.Posts)
                 item.Board = board;
 
@@ -133,11 +127,11 @@ namespace FChan.Library
         ///     Gets the thread asynchronously.
         /// </summary>
         /// <returns>The thread.</returns>
-        /// <param name="board">Boad.</param>
+        /// <param name="board">Board.</param>
         /// <param name="threadNumber">Thread number.</param>
         public static async Task<Thread> GetThreadAsync(string board, int threadNumber)
         {
-            var thread = await DownloadObjectAsync<Thread>(Constants.GetThreadUrl(board, threadNumber));
+            var thread = await DownloadObjectAsync<Thread>(GetThreadUrl(board, threadNumber));
             foreach (var item in thread.Posts)
                 item.Board = board;
 

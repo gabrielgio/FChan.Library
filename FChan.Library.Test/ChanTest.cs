@@ -1,4 +1,7 @@
-﻿using Xunit;
+﻿using System.Linq;
+using Xunit;
+using static FChan.Library.Chan;
+using static Xunit.Assert;
 
 namespace FChan.Library.Test
 {
@@ -9,16 +12,16 @@ namespace FChan.Library.Test
         {
             var thread = Chan.GetThreadPage("a", 1);
 
-            Assert.NotNull(thread);
+            NotNull(thread);
 
             foreach (var item in thread.Threads)
             {
-                Assert.NotNull(item);
+                NotNull(item);
 
                 foreach (var post in item.Posts)
                 {
-                    Assert.NotNull(post);
-                    Assert.NotEqual(post.PostNumber, 0);
+                    NotNull(post);
+                    NotEqual(0, post.PostNumber);
                 }
             }
         }
@@ -28,16 +31,16 @@ namespace FChan.Library.Test
         {
             var thread = await Chan.GetThreadPageAsync("a", 1);
 
-            Assert.NotNull(thread);
+            NotNull(thread);
 
             foreach (var item in thread.Threads)
             {
-                Assert.NotNull(item);
+                NotNull(item);
 
                 foreach (var post in item.Posts)
                 {
-                    Assert.NotNull(post);
-                    Assert.NotEqual(post.PostNumber, default(int));
+                    NotNull(post);
+                    NotEqual(default(int), post.PostNumber);
                 }
             }
         }
@@ -46,28 +49,52 @@ namespace FChan.Library.Test
         public void GetBoard()
         {
             var board = Chan.GetBoard();
-            Assert.NotNull(board);
+            NotNull(board);
         }
 
         [Fact]
-        public async void GetBoardAync()
+        public async void GetBoardAsync()
         {
             var board = await Chan.GetBoardAsync();
-            Assert.NotNull(board);
+            NotNull(board);
         }
 
         [Fact]
         public void GetThreadPage()
         {
             var thread = Chan.GetThreadPage("a", 1);
-            Assert.NotNull(thread);
+            NotNull(thread);
         }
 
         [Fact]
         public async void GetThreadPageAsync()
         {
             var thread = await Chan.GetThreadPageAsync("a", 1);
-            Assert.NotEqual(thread, null);
+            NotNull(thread);
+        }
+
+        [Fact]
+        public async void GetThread()
+        {
+            var threadPage = await Chan.GetThreadPageAsync("a", 1);
+            var threadNumber = threadPage.Threads.First().Posts.First().PostNumber;
+
+
+            var thread = await Chan.GetThreadAsync("a", threadNumber);
+
+            NotNull(thread);
+        }
+        
+        [Fact]
+        public void GetThreadAsync()
+        {
+            var threadPage = Chan.GetThreadPage("a", 1);
+            var threadNumber = threadPage.Threads.First().Posts.First().PostNumber;
+
+
+            var thread = Chan.GetThread("a", threadNumber);
+
+            NotNull(thread);
         }
     }
 }

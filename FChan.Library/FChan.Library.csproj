@@ -1,15 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>2.0.0</Version>
+    <Version>2.0.1</Version>
     <PackageId>FChan.Library</PackageId>
     <Authors>Gabriel Giovanini</Authors>
-    <Description>Awesome application logging utility</Description>
+    <Description>4Chan c# wrapper</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageReleaseNotes>Moving to dotnet standard 2.0</PackageReleaseNotes>
+    <PackageReleaseNotes>Some small fixes</PackageReleaseNotes>
     <PackageTags>4chan</PackageTags>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
   </ItemGroup>
 </Project>
