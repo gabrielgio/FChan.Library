@@ -1,5 +1,4 @@
-name: ASP.NET Core CI
-
+name: Dotnet Test
 on: [push]
 
 jobs:
